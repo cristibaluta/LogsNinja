@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28ACBD382452E5A0008C9F7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACBD372452E5A0008C9F7E /* AppDelegate.swift */; };
+		28ACBD3A2452E5A0008C9F7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACBD392452E5A0008C9F7E /* ContentView.swift */; };
+		28ACBD3C2452E5A3008C9F7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28ACBD3B2452E5A3008C9F7E /* Assets.xcassets */; };
+		28ACBD3F2452E5A3008C9F7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28ACBD3E2452E5A3008C9F7E /* Preview Assets.xcassets */; };
+		28ACBD422452E5A3008C9F7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28ACBD402452E5A3008C9F7E /* Main.storyboard */; };
+		28ACBD4E2452E5A3008C9F7E /* Logs_NinjaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACBD4D2452E5A3008C9F7E /* Logs_NinjaTests.swift */; };
+		28ACBD572452F293008C9F7E /* LogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACBD562452F293008C9F7E /* LogStore.swift */; };
+		28B4649F244F31E4006D4A28 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4649E244F31E4006D4A28 /* main.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28ACBD4A2452E5A3008C9F7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28B46493244F31E4006D4A28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28ACBD342452E5A0008C9F7E;
+			remoteInfo = "Logs Ninja";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		28B46499244F31E4006D4A28 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		28ACBD352452E5A0008C9F7E /* Logs Ninja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Logs Ninja.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28ACBD372452E5A0008C9F7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		28ACBD392452E5A0008C9F7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		28ACBD3B2452E5A3008C9F7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28ACBD3E2452E5A3008C9F7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		28ACBD412452E5A3008C9F7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		28ACBD432452E5A3008C9F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28ACBD442452E5A3008C9F7E /* Logs_Ninja.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Logs_Ninja.entitlements; sourceTree = "<group>"; };
+		28ACBD492452E5A3008C9F7E /* Logs NinjaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Logs NinjaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28ACBD4D2452E5A3008C9F7E /* Logs_NinjaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logs_NinjaTests.swift; sourceTree = "<group>"; };
+		28ACBD4F2452E5A3008C9F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28ACBD562452F293008C9F7E /* LogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogStore.swift; sourceTree = "<group>"; };
+		28B4649B244F31E4006D4A28 /* LogsNinja */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LogsNinja; sourceTree = BUILT_PRODUCTS_DIR; };
+		28B4649E244F31E4006D4A28 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28ACBD322452E5A0008C9F7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28ACBD462452E5A3008C9F7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28B46498244F31E4006D4A28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28ACBD362452E5A0008C9F7E /* Logs Ninja */ = {
+			isa = PBXGroup;
+			children = (
+				28ACBD372452E5A0008C9F7E /* AppDelegate.swift */,
+				28ACBD562452F293008C9F7E /* LogStore.swift */,
+				28ACBD392452E5A0008C9F7E /* ContentView.swift */,
+				28ACBD3B2452E5A3008C9F7E /* Assets.xcassets */,
+				28ACBD402452E5A3008C9F7E /* Main.storyboard */,
+				28ACBD432452E5A3008C9F7E /* Info.plist */,
+				28ACBD442452E5A3008C9F7E /* Logs_Ninja.entitlements */,
+				28ACBD3D2452E5A3008C9F7E /* Preview Content */,
+			);
+			path = "Logs Ninja";
+			sourceTree = "<group>";
+		};
+		28ACBD3D2452E5A3008C9F7E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				28ACBD3E2452E5A3008C9F7E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		28ACBD4C2452E5A3008C9F7E /* Logs NinjaTests */ = {
+			isa = PBXGroup;
+			children = (
+				28ACBD4D2452E5A3008C9F7E /* Logs_NinjaTests.swift */,
+				28ACBD4F2452E5A3008C9F7E /* Info.plist */,
+			);
+			path = "Logs NinjaTests";
+			sourceTree = "<group>";
+		};
+		28B46492244F31E4006D4A28 = {
+			isa = PBXGroup;
+			children = (
+				28B4649D244F31E4006D4A28 /* logfilter */,
+				28ACBD362452E5A0008C9F7E /* Logs Ninja */,
+				28ACBD4C2452E5A3008C9F7E /* Logs NinjaTests */,
+				28B4649C244F31E4006D4A28 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		28B4649C244F31E4006D4A28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28B4649B244F31E4006D4A28 /* LogsNinja */,
+				28ACBD352452E5A0008C9F7E /* Logs Ninja.app */,
+				28ACBD492452E5A3008C9F7E /* Logs NinjaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28B4649D244F31E4006D4A28 /* logfilter */ = {
+			isa = PBXGroup;
+			children = (
+				28B4649E244F31E4006D4A28 /* main.swift */,
+			);
+			path = logfilter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28ACBD342452E5A0008C9F7E /* Logs Ninja */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28ACBD502452E5A3008C9F7E /* Build configuration list for PBXNativeTarget "Logs Ninja" */;
+			buildPhases = (
+				28ACBD312452E5A0008C9F7E /* Sources */,
+				28ACBD322452E5A0008C9F7E /* Frameworks */,
+				28ACBD332452E5A0008C9F7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Logs Ninja";
+			productName = "Logs Ninja";
+			productReference = 28ACBD352452E5A0008C9F7E /* Logs Ninja.app */;
+			productType = "com.apple.product-type.application";
+		};
+		28ACBD482452E5A3008C9F7E /* Logs NinjaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28ACBD532452E5A3008C9F7E /* Build configuration list for PBXNativeTarget "Logs NinjaTests" */;
+			buildPhases = (
+				28ACBD452452E5A3008C9F7E /* Sources */,
+				28ACBD462452E5A3008C9F7E /* Frameworks */,
+				28ACBD472452E5A3008C9F7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28ACBD4B2452E5A3008C9F7E /* PBXTargetDependency */,
+			);
+			name = "Logs NinjaTests";
+			productName = "Logs NinjaTests";
+			productReference = 28ACBD492452E5A3008C9F7E /* Logs NinjaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		28B4649A244F31E4006D4A28 /* LogsNinja */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28B464A2244F31E4006D4A28 /* Build configuration list for PBXNativeTarget "LogsNinja" */;
+			buildPhases = (
+				28B46497244F31E4006D4A28 /* Sources */,
+				28B46498244F31E4006D4A28 /* Frameworks */,
+				28B46499244F31E4006D4A28 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LogsNinja;
+			productName = logfilter;
+			productReference = 28B4649B244F31E4006D4A28 /* LogsNinja */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28B46493244F31E4006D4A28 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Imagin soft";
+				TargetAttributes = {
+					28ACBD342452E5A0008C9F7E = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					28ACBD482452E5A3008C9F7E = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 28ACBD342452E5A0008C9F7E;
+					};
+					28B4649A244F31E4006D4A28 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = 28B46496244F31E4006D4A28 /* Build configuration list for PBXProject "LogsNinja" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 28B46492244F31E4006D4A28;
+			productRefGroup = 28B4649C244F31E4006D4A28 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28B4649A244F31E4006D4A28 /* LogsNinja */,
+				28ACBD342452E5A0008C9F7E /* Logs Ninja */,
+				28ACBD482452E5A3008C9F7E /* Logs NinjaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28ACBD332452E5A0008C9F7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28ACBD422452E5A3008C9F7E /* Main.storyboard in Resources */,
+				28ACBD3F2452E5A3008C9F7E /* Preview Assets.xcassets in Resources */,
+				28ACBD3C2452E5A3008C9F7E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28ACBD472452E5A3008C9F7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28ACBD312452E5A0008C9F7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28ACBD3A2452E5A0008C9F7E /* ContentView.swift in Sources */,
+				28ACBD382452E5A0008C9F7E /* AppDelegate.swift in Sources */,
+				28ACBD572452F293008C9F7E /* LogStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28ACBD452452E5A3008C9F7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28ACBD4E2452E5A3008C9F7E /* Logs_NinjaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28B46497244F31E4006D4A28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28B4649F244F31E4006D4A28 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28ACBD4B2452E5A3008C9F7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28ACBD342452E5A0008C9F7E /* Logs Ninja */;
+			targetProxy = 28ACBD4A2452E5A3008C9F7E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		28ACBD402452E5A3008C9F7E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28ACBD412452E5A3008C9F7E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28ACBD512452E5A3008C9F7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Logs Ninja/Logs_Ninja.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Logs Ninja/Preview Content\"";
+				DEVELOPMENT_TEAM = 5NHDC5EV44;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Logs Ninja/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cristibaluta.Logs-Ninja";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		28ACBD522452E5A3008C9F7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Logs Ninja/Logs_Ninja.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Logs Ninja/Preview Content\"";
+				DEVELOPMENT_TEAM = 5NHDC5EV44;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Logs Ninja/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cristibaluta.Logs-Ninja";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		28ACBD542452E5A3008C9F7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5NHDC5EV44;
+				INFOPLIST_FILE = "Logs NinjaTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cristibaluta.Logs-NinjaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logs Ninja.app/Contents/MacOS/Logs Ninja";
+			};
+			name = Debug;
+		};
+		28ACBD552452E5A3008C9F7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5NHDC5EV44;
+				INFOPLIST_FILE = "Logs NinjaTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cristibaluta.Logs-NinjaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logs Ninja.app/Contents/MacOS/Logs Ninja";
+			};
+			name = Release;
+		};
+		28B464A0244F31E4006D4A28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		28B464A1244F31E4006D4A28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		28B464A3244F31E4006D4A28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NHDC5EV44;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		28B464A4244F31E4006D4A28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NHDC5EV44;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28ACBD502452E5A3008C9F7E /* Build configuration list for PBXNativeTarget "Logs Ninja" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28ACBD512452E5A3008C9F7E /* Debug */,
+				28ACBD522452E5A3008C9F7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28ACBD532452E5A3008C9F7E /* Build configuration list for PBXNativeTarget "Logs NinjaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28ACBD542452E5A3008C9F7E /* Debug */,
+				28ACBD552452E5A3008C9F7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28B46496244F31E4006D4A28 /* Build configuration list for PBXProject "LogsNinja" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28B464A0244F31E4006D4A28 /* Debug */,
+				28B464A1244F31E4006D4A28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28B464A2244F31E4006D4A28 /* Build configuration list for PBXNativeTarget "LogsNinja" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28B464A3244F31E4006D4A28 /* Debug */,
+				28B464A4244F31E4006D4A28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28B46493244F31E4006D4A28 /* Project object */;
+}
