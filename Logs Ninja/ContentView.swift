@@ -11,7 +11,8 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var store: LogsStore
     @State var items: [Log] = []
-    @State var filters: String = ""
+    @State var query: String = ""
+    @State var isAnimating: Bool = true
     
     var body: some View {
         return VSplitView {
@@ -25,43 +26,72 @@ struct ContentView: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         let result = panel.runModal()
                         if result == .OK, let url = panel.url {
-                            self.store.loadLogs(at: url, filters: self.filters.components(separatedBy: ","))
+                            self.isAnimating = true
+                            self.store.loadLogs(at: url, filters: self.query.components(separatedBy: ","))
                         }
                     }
                 }) {
                     Text("Browse")
                 }
-                TextField("Enter filter...", text: $filters, onEditingChanged: { (changed) in
-                    print("Username onEditingChanged - \(changed)")
+                TextField("Enter filter...", text: $query, onEditingChanged: { (changed) in
                 }) {
-                    print("Username onCommit")
-                    self.store.loadLogs(at: nil, filters: self.filters.components(separatedBy: ","))
+                    self.store.filterLogs(filters: self.query.components(separatedBy: ","))
                 }
                 Button(action: {
-                    self.store.loadLogs(at: nil, filters: self.filters.components(separatedBy: ","))
+                    self.isAnimating = true
+                    self.store.filterLogs(filters: self.query.components(separatedBy: ","))
                 }) {
                     Text("Apply filter")
+                }
+                .disabled(self.query.count == 0)
+                
+                AttributedText {
+                    LineBreak()
+                        .lineSpacing(20)
+                    AText("Hello SwiftUI")
+                        .backgroundColor(.red)
+                        .baselineOffset(10)
+                        .font(.systemFont(ofSize: 20))
+                        .foregroundColor(.yellow)
+                        .expansion(1)
+                        .kerning(3)
+                        .ligature(.none)
+                        .obliqueness(0.5)
+                        .shadow(color: .black, radius: 10, x: 4, y: 4)
+                        .strikethrough(style: .patternDash, color: .black)
+                        .stroke(width: -2, color: .green)
+                        .underline(.patternDashDotDot, color: .cyan)
+                    LineBreak()
+                    AText(" with fun")
+                        .paragraphSpacing(10, before: 60)
+                        .alignment(.right)
                 }
             }
             .frame(height: 50)
             .padding()
             
-            GeometryReader { geometry in
-                List(self.items) { log in
-                    LogRow(log: log)
-                    .background((log.index % 2 == 0) ? Color(red: 0.95, green: 0.95, blue: 0.95) : Color(.white))
-                    .frame(height: self.heightWithConstrainedWidth(geometry.size.width - 50, text: log.content))
-                    .clipped()
-                    .onTapGesture {
-                        self.items[log.index].isSelected.toggle()
+            ZStack {
+                GeometryReader { geometry in
+                    List(self.items) { log in
+                        LogRow(log: log)
+                            .background((log.index % 2 == 0) ? Color(red: 0.95, green: 0.95, blue: 0.95) : Color(.white))
+                            //                        .frame(minWidth: 100, minHeight: 30)
+                            .frame(height: self.heightWithConstrainedWidth(geometry.size.width - 50, text: log.content))
+                            .clipped()
+                            .onTapGesture {
+                                self.items[log.index].isSelected.toggle()
+                        }
                     }
+                    .onAppear(perform: {
+                        self.items = self.store.logs
+                        self.isAnimating = false
+                    })
+                    .onReceive(self.store.logsDidChange, perform: { _ in
+                        self.items = self.store.logs
+                        self.isAnimating = false
+                    })
                 }
-                .onAppear(perform: {
-                    self.items = self.store.logs
-                })
-                .onReceive(self.store.logsDidChange, perform: { _ in
-                    self.items = self.store.logs
-                })
+                ProgressIndicator(isAnimating: isAnimating).frame(width: 300)
             }
         }
     }
@@ -85,9 +115,9 @@ struct LogRow: View {
                 .foregroundColor(self.log.isSelected ? .red : .gray)
                 
                 Text(self.log.content)
-                .frame(minWidth: geometry.size.width - self.leftColumnWidth, alignment: .leading)
+                .frame(width: geometry.size.width - self.leftColumnWidth, alignment: .leading)
                 .font(.system(size: 12))
-                .foregroundColor(self.log.isSelected ? .red : .black)
+                .foregroundColor(self.log.isSelected ? .red : .primary)
                 .lineLimit(nil)
                 .multilineTextAlignment(.leading)
 //                .background(Color(.blue))
@@ -105,18 +135,7 @@ struct ContentView_Previews: PreviewProvider {
         let logs = LogsStore()
         logs.logs = [Log(content: "aaaa", index: 0),
         Log(content: "aaaa\nbbbbbb", index: 1),
-        Log(content: "ccccc", index: 2, isSelected: true)]
+        Log(content: "ccccc\nddddddd\neeeeeee", index: 2, isSelected: true)]
         return logs
     }
 }
-
-//struct Label: NSViewRepresentable {
-//    typealias NSViewType = NSView
-//
-//    fileprivate var configuration = { (view: NSViewType) in }
-//
-//    func makeNSView(context: NSViewRepresentableContext<Self>) -> NSViewType { NSViewType() }
-//    func updateUIView(_ uiView: NSViewType, context: NSViewRepresentableContext<Self>) {
-//        configuration(uiView)
-//    }
-//}

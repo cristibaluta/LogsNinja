@@ -9,6 +9,8 @@
 import SwiftUI
 import Combine
 
+typealias Signal = PassthroughSubject<(), Never>
+
 struct Log: Identifiable {
     var id = UUID()
     var content: String
@@ -18,12 +20,17 @@ struct Log: Identifiable {
 
 final class LogsStore: ObservableObject {
     
-    let keywords = "rest".components(separatedBy: ",")
-    var lastPath = "/Users/cristi/Downloads/debug (1).log"
+    let keywords = "".components(separatedBy: ",")
+    var lastPath = ""
     var prefix = "2020"
     
     @Published var logs: [Log] = []
-    let logsDidChange = PassthroughSubject<(), Never>()
+    var originalLogs = [String]()
+    let logsDidChange = Signal()
+    
+    init(url: URL? = nil) {
+        lastPath = url?.path ?? ""
+    }
     
     func loadLogs() {
         loadLogs(at: nil, filters: keywords)
@@ -35,35 +42,65 @@ final class LogsStore: ObservableObject {
         lastPath = input
         
         DispatchQueue.global(qos: .background).async {
-            var logs: [Log]  = []
-            var index = 0
-            var text = ""
-//            var log = ""
+            self.originalLogs = []
+            let startDate = Date()
+                    
             if freopen(input, "r", stdin) == nil {
                 perror(input)
             }
             while let line = readLine() {
-                guard filters.count > 0, filters.first != ""  else {
-                    logs.append(.init(content: line, index: index))
-                    index += 1
-                    continue
-                }
-                text = line.lowercased()
-                guard text.hasPrefix(self.prefix) else {
-                    // This line has no prefix, it means it belongs to the previous line
-                    if index < logs.count {
-                        logs[index-1].content += "\n\(line)"
-                    }
-                    continue
-                }
-                for key in filters {
-                    if text.contains(key.lowercased()) {
-                        logs.append(.init(content: line, index: index))
-                        index += 1
-                        break
-                    }
-                }
+                self.originalLogs.append(line)
             }
+            print("Read logs in \(Date().timeIntervalSince(startDate)) sec")
+            
+            self.filterLogs(filters: filters)
+        }
+    }
+    
+    func filterLogs(filters: [String]) {
+        
+        DispatchQueue.main.async {
+            self.logs = []
+            do {
+                self.logsDidChange.send()
+            }
+        }
+        
+        DispatchQueue.global(qos: .background).async {
+            var logs: [Log]  = []
+            var lines = [String]()
+            var index = 0
+            var lineLowercased = ""
+            let startDate = Date()
+            
+            for line in self.originalLogs + [""] {
+                lineLowercased = line.lowercased()
+                guard lineLowercased.hasPrefix(self.prefix) else {
+                    // This line has no prefix, it means it belongs to the previous line
+                    lines.append(line)
+                    continue
+                }
+                // We have a line or multiline text ready,  check if meets any search criteria
+                if lines.count > 0 {
+                    if filters.count > 0 &&  filters.first != "" {
+                        let text = lines.joined(separator: "\n").lowercased()
+                        for key in filters {
+                            if text.contains(key.lowercased()) {
+                                logs.append(.init(content: lines.joined(separator: "\n"), index: index))
+                                index += 1
+                                break
+                            }
+                        }
+                    } else {
+                        logs.append(.init(content: lines.joined(separator: "\n"), index: index))
+                        index += 1
+                    }
+                    lines = []
+                }
+                // Store the current line for next iteration use
+                lines = [line]
+            }
+            print("Filtering logs by keywords \(filters) in \(Date().timeIntervalSince(startDate)) sec")
             DispatchQueue.main.async {
                 self.logs = logs
                 do {

@@ -14,10 +14,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
 
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
-        let logs = LogsStore()
+        let logs = LogsStore(url: URL(fileURLWithPath: "/Users/cristi/Downloads/debug.log"))
         let contentView = ContentView(store: logs)
 
         // Create the window and set the content view.
@@ -39,6 +38,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
-
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
+    
+    func applicationOpenUntitledFile(_ sender: NSApplication) -> Bool {
+        print(sender)
+        return true
+    }
+    
+    func application(_ application: NSApplication, open urls: [URL]) {
+        print(urls)
+    }
+    
+    func application(_ sender: NSApplication, openFile filename: String) -> Bool {
+        return true
+    }
 }
 
