@@ -16,13 +16,15 @@ struct Log: Identifiable {
     var content: String
     var index: Int
     var isSelected = false
+    var isHighlighted = true
 }
 
 final class LogsStore: ObservableObject {
     
-    let keywords = "".components(separatedBy: ",")
+    let keywords = "activitymanager".components(separatedBy: ",")
     var lastPath = ""
     var prefix = "2020"
+    private let queue = DispatchQueue(label: "filter", qos: .background)
     
     @Published var logs: [Log] = []
     var originalLogs = [String]()
@@ -57,16 +59,17 @@ final class LogsStore: ObservableObject {
         }
     }
     
-    func filterLogs(filters: [String]) {
+    func filterLogs(filters: [String], keepOnlyMatches: Bool = true) {
         
-        DispatchQueue.main.async {
-            self.logs = []
-            do {
+        queue.async {
+            let semaphore = DispatchSemaphore(value: 0)
+            DispatchQueue.main.async {
+                self.logs = []
                 self.logsDidChange.send()
+                semaphore.signal()
             }
-        }
-        
-        DispatchQueue.global(qos: .background).async {
+            semaphore.wait()
+            
             var logs: [Log]  = []
             var lines = [String]()
             var index = 0
@@ -80,31 +83,40 @@ final class LogsStore: ObservableObject {
                     lines.append(line)
                     continue
                 }
-                // We have a line or multiline text ready,  check if meets any search criteria
+                // We have a line or multiline text ready, check if meets any search criteria
                 if lines.count > 0 {
-                    if filters.count > 0 &&  filters.first != "" {
+                    if filters.count > 0 && filters.first != "" {
                         let text = lines.joined(separator: "\n").lowercased()
+                        var matched = false
                         for key in filters {
                             if text.contains(key.lowercased()) {
-                                logs.append(.init(content: lines.joined(separator: "\n"), index: index))
-                                index += 1
+                                matched = true
                                 break
                             }
                         }
+                        if matched {
+                            logs.append(.init(content: lines.joined(separator: "\n"), index: index, isHighlighted: true))
+                            index += 1
+                        } else if !keepOnlyMatches {
+                            // Add unmatched lines unhighlighted
+                            logs.append(.init(content: lines.joined(separator: "\n"), index: index, isHighlighted:  false))
+                            index += 1
+                        }
                     } else {
-                        logs.append(.init(content: lines.joined(separator: "\n"), index: index))
+                        logs.append(.init(content: lines.joined(separator: "\n"), index: index, isHighlighted: true))
                         index += 1
                     }
                     lines = []
                 }
                 // Store the current line for next iteration use
                 lines = [line]
-            }
-            print("Filtering logs by keywords \(filters) in \(Date().timeIntervalSince(startDate)) sec")
-            DispatchQueue.main.async {
-                self.logs = logs
-                do {
-                    self.logsDidChange.send()
+            
+                print("Filtering logs by keywords \(filters) in \(Date().timeIntervalSince(startDate)) sec")
+                DispatchQueue.main.async {
+                    self.logs = logs
+                    do {
+                        self.logsDidChange.send()
+                    }
                 }
             }
         }
