@@ -64,7 +64,7 @@ struct ContentView: View {
                 GeometryReader { geometry in
                     List(self.items) { log in
                         LogRow(log: log)
-                            .background((log.index % 2 == 0) ? Color(red: 0.95, green: 0.95, blue: 0.95) : Color(.white))
+                            .background((log.index % 2 == 0) ? Color(NSColor(named: "EvenCellColor")!) : Color(.clear))
                             .frame(height: self.heightWithConstrainedWidth(geometry.size.width - 50, text: log.content))
                             .clipped()
                             .onTapGesture {
@@ -107,12 +107,16 @@ struct LogRow: View {
             HStack(spacing: 0) {
                 Text("●")
                 .frame(width: self.leftColumnWidth)
-                .foregroundColor(self.log.isSelected ? .red : (self.log.isHighlighted ? .gray : self.nonHighlightedColor))
+                .foregroundColor(self.log.isSelected
+                    ? .red
+                    : (self.log.isHighlighted ? .gray : self.nonHighlightedColor))
                 
                 Text(self.log.content)
                 .frame(width: geometry.size.width - self.leftColumnWidth, alignment: .leading)
                 .font(.system(size: 12))
-                    .foregroundColor(self.log.isSelected ? .red : (self.log.isHighlighted ? .black : self.nonHighlightedColor))
+                .foregroundColor(self.log.isSelected
+                    ? .red
+                    : (self.log.isHighlighted ? .primary : self.nonHighlightedColor))
                 .lineLimit(nil)
                 .multilineTextAlignment(.leading)
 //                .background(Color(.blue))
