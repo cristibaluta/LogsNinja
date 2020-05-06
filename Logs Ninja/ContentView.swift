@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var store: LogsStore
     @State var items: [Log] = []
-    @State var keywords: [String] = ["ActivityManager", "RestClient", "-x post"]
+    @State var keywords: [String] = ["ActivityManager", "308806323998189", "308806323998190"]
     @State var query: String = ""
     @State var isAnimating: Bool = true
     @State var keepMatches = true {
@@ -27,11 +27,11 @@ struct ContentView: View {
                 VStack(alignment: .leading) {
                     TextField("Enter filter...", text: $query, onEditingChanged: { (changed) in
                     }) {
-                        self.store.filterLogs(filters: self.query.components(separatedBy: ","), keepOnlyMatches: self.keepMatches)
+                        self.store.filterLogs(filters: self.query.components(separatedBy: "&&"), keepOnlyMatches: self.keepMatches)
                     }
                     Button(action: {
                         self.isAnimating = true
-                        self.store.filterLogs(filters: self.query.components(separatedBy: ","), keepOnlyMatches: self.keepMatches)
+                        self.store.filterLogs(filters: self.query.components(separatedBy: "&&"), keepOnlyMatches: self.keepMatches)
                     }) {
                         Text("Apply filter")
                     }
@@ -69,6 +69,8 @@ struct ContentView: View {
                             .clipped()
                             .onTapGesture {
                                 self.items[log.index].isSelected.toggle()
+                                self.store.selectOriginalIndex(log.originalIndex,
+                                                               selected: self.items[log.index].isSelected)
                             }
                     }
                     .onAppear(perform: {
@@ -126,9 +128,9 @@ struct ContentView_Previews: PreviewProvider {
     }
     static func logs() -> LogsStore {
         let logs = LogsStore()
-        logs.logs = [Log(content: "aaaa", index: 0),
-        Log(content: "aaaa\nbbbbbb", index: 1),
-        Log(content: "ccccc\nddddddd\neeeeeee", index: 2, isSelected: true)]
+        logs.logs = [Log(content: "aaaa", index: 0, originalIndex: 0),
+        Log(content: "aaaa\nbbbbbb", index: 1, originalIndex: 1),
+        Log(content: "ccccc\nddddddd\neeeeeee", index: 2, originalIndex: 2, isSelected: true)]
         return logs
     }
 }
