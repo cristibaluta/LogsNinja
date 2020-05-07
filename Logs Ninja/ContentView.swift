@@ -64,14 +64,23 @@ struct ContentView: View {
                 GeometryReader { geometry in
                     List(self.items) { log in
                         LogRow(log: log)
-                            .background((log.index % 2 == 0) ? Color(NSColor(named: "EvenCellColor")!) : Color(.clear))
-                            .frame(height: self.heightWithConstrainedWidth(geometry.size.width - 50, text: log.content))
-                            .clipped()
-                            .onTapGesture {
-                                self.items[log.index].isSelected.toggle()
-                                self.store.selectOriginalIndex(log.originalIndex,
-                                                               selected: self.items[log.index].isSelected)
+                        .background((log.index % 2 == 0) ? Color(NSColor(named: "EvenCellColor")!) : Color(.clear))
+                        .frame(height: self.heightWithConstrainedWidth(geometry.size.width - 50, text: log.content))
+                        .clipped()
+                        .onTapGesture {
+                            self.items[log.index].isSelected.toggle()
+                            self.store.selectOriginalIndex(log.originalIndex,
+                                                           selected: self.items[log.index].isSelected)
+                        }
+                        .contextMenu {
+                            Button(action: {
+                                let pasteboard = NSPasteboard.general
+                                pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
+                                pasteboard.setString(log.content, forType: .string)
+                            }) {
+                                Text("Copy text")
                             }
+                        }
                     }
                     .onAppear(perform: {
                         self.items = self.store.logs

@@ -150,8 +150,7 @@ final class LogsStore: ObservableObject {
         }
     }
     
-    func selectOriginalIndex(_ index: Int, selected: Bool) {
-        let originalIndex = logs[index].originalIndex
+    func selectOriginalIndex(_ originalIndex: Int, selected: Bool) {
         if selected {
             originalLogsSelected.append(originalIndex)
         } else {
