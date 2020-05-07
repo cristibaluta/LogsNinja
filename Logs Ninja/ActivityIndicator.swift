@@ -16,16 +16,16 @@ struct ProgressIndicator: NSViewRepresentable {
     
     func makeNSView(context: NSViewRepresentableContext<ProgressIndicator>) -> NSProgressIndicator {
         let view = NSProgressIndicator()
-        view.style = .bar
-        view.minValue = 0
-        view.maxValue = 100
-        view.doubleValue = 70
-        view.isIndeterminate = false
+        view.style = .spinning
+//        view.minValue = 0
+//        view.maxValue = 100
+//        view.doubleValue = 70
+//        view.isIndeterminate = false
         return view
     }
 
     func updateNSView(_ nsView: NSProgressIndicator, context: NSViewRepresentableContext<ProgressIndicator>) {
-        isAnimating ? nsView.startAnimation(nil) : nsView.stopAnimation(nil)
-        nsView.isHidden = !isAnimating
+//        isAnimating ? nsView.startAnimation(nil) : nsView.stopAnimation(nil)
+//        nsView.isHidden = !isAnimating
     }
 }

@@ -10,6 +10,7 @@
 		28378538245C2DA300518678 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28378537245C2DA300518678 /* ActivityIndicator.swift */; };
 		2837853C245D713900518678 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2837853B245D713900518678 /* icon.icns */; };
 		2837853E245D7AF400518678 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837853D245D7AF400518678 /* Document.swift */; };
+		283785402463C9C100518678 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837853F2463C9C100518678 /* String+Extension.swift */; };
 		287167D924581A7B0026CB49 /* NSAttributedStringBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 287167D824581A7B0026CB49 /* NSAttributedStringBuilder */; };
 		287167DB24581BBF0026CB49 /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287167DA24581BBF0026CB49 /* AttributedText.swift */; };
 		287167E424581E2E0026CB49 /* AText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287167DE24581E2E0026CB49 /* AText.swift */; };
@@ -54,6 +55,7 @@
 		28378537245C2DA300518678 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		2837853B245D713900518678 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		2837853D245D7AF400518678 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		2837853F2463C9C100518678 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		287167DA24581BBF0026CB49 /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
 		287167DE24581E2E0026CB49 /* AText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AText.swift; sourceTree = "<group>"; };
 		287167DF24581E2E0026CB49 /* StaticComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticComponents.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				28ACBD392452E5A0008C9F7E /* ContentView.swift */,
 				287167DA24581BBF0026CB49 /* AttributedText.swift */,
 				28378537245C2DA300518678 /* ActivityIndicator.swift */,
+				2837853F2463C9C100518678 /* String+Extension.swift */,
 				28ACBD3B2452E5A3008C9F7E /* Assets.xcassets */,
 				2837853B245D713900518678 /* icon.icns */,
 				28ACBD402452E5A3008C9F7E /* Main.storyboard */,
@@ -324,6 +327,7 @@
 				287167E924581E2E0026CB49 /* NSAttributedStringBuilder.swift in Sources */,
 				28ACBD3A2452E5A0008C9F7E /* ContentView.swift in Sources */,
 				28378538245C2DA300518678 /* ActivityIndicator.swift in Sources */,
+				283785402463C9C100518678 /* String+Extension.swift in Sources */,
 				287167E424581E2E0026CB49 /* AText.swift in Sources */,
 				287167E724581E2E0026CB49 /* ImageAttachment.swift in Sources */,
 				2837853E245D7AF400518678 /* Document.swift in Sources */,

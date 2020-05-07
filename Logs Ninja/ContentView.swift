@@ -27,6 +27,7 @@ struct ContentView: View {
                 VStack(alignment: .leading) {
                     TextField("Enter filter...", text: $query, onEditingChanged: { (changed) in
                     }) {
+                        self.isAnimating = true
                         self.store.filterLogs(filters: self.query.components(separatedBy: "&&"), keepOnlyMatches: self.keepMatches)
                     }
                     Button(action: {
@@ -64,8 +65,14 @@ struct ContentView: View {
                 GeometryReader { geometry in
                     List(self.items) { log in
                         LogRow(log: log)
-                        .background((log.index % 2 == 0) ? Color(NSColor(named: "EvenCellColor")!) : Color(.clear))
-                        .frame(height: self.heightWithConstrainedWidth(geometry.size.width - 50, text: log.content))
+                        .background(
+                            log.isSelected
+                                ? Color(NSColor(named: "SelectedCellColor")!)
+                                : ((log.index % 2 == 0)
+                                    ? Color(NSColor(named: "EvenCellColor")!)
+                                    : Color(.clear))
+                        )
+                        .frame(height: log.content.heightWithConstrainedWidth(geometry.size.width - 50))
                         .clipped()
                         .onTapGesture {
                             self.items[log.index].isSelected.toggle()
@@ -80,6 +87,17 @@ struct ContentView: View {
                             }) {
                                 Text("Copy text")
                             }
+                            Button(action: {
+                                for log in self.items {
+                                    if log.isSelected {
+                                        self.items[log.index].isSelected.toggle()
+                                        self.store.selectOriginalIndex(log.originalIndex,
+                                                                       selected: false)
+                                    }
+                                }
+                            }) {
+                                Text("Remove all selections")
+                            }
                         }
                     }
                     .onAppear(perform: {
@@ -91,45 +109,33 @@ struct ContentView: View {
                         self.isAnimating = false
                     })
                 }
-//                ProgressIndicator(isAnimating: isAnimating).frame(width: 300)
+                ProgressIndicator(isAnimating: isAnimating).frame(width: 300)
+                .opacity(isAnimating ? 1 : 0)
             }
         }
-    }
-    
-    func heightWithConstrainedWidth(_ width: CGFloat, text: String) -> CGFloat {
-        let constraintRect = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-        let boundingBox = text.boundingRect(with: constraintRect,
-                                            options: NSString.DrawingOptions.usesLineFragmentOrigin,
-                                            attributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 12)],
-                                            context: nil)
-        return boundingBox.height + 8
     }
 }
 
 struct LogRow: View {
     var log: Log
-    let leftColumnWidth = CGFloat(30)
+    let leftColumnWidth = CGFloat(10)
     let nonHighlightedColor = Color(red: 0.8, green: 0.8, blue: 0.8)
 
     var body: some View {
         GeometryReader { geometry in
-            HStack(spacing: 0) {
-                Text("●")
-                .frame(width: self.leftColumnWidth)
-                .foregroundColor(self.log.isSelected
-                    ? .red
-                    : (self.log.isHighlighted ? .gray : self.nonHighlightedColor))
+//            HStack(spacing: 0) {
+//                Text("●")
+//                .frame(width: self.leftColumnWidth)
+//                .foregroundColor(self.log.isHighlighted ? .secondary : self.nonHighlightedColor)
                 
                 Text(self.log.content)
                 .frame(width: geometry.size.width - self.leftColumnWidth, alignment: .leading)
                 .font(.system(size: 12))
-                .foregroundColor(self.log.isSelected
-                    ? .red
-                    : (self.log.isHighlighted ? .primary : self.nonHighlightedColor))
+                .foregroundColor(self.log.isHighlighted ? .primary : self.nonHighlightedColor)
                 .lineLimit(nil)
                 .multilineTextAlignment(.leading)
-//                .background(Color(.blue))
-            }
+                .padding(.leading, self.leftColumnWidth)
+//            }
         }
     }
 }

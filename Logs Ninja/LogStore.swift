@@ -39,7 +39,7 @@ final class LogsStore: ObservableObject {
     }
     
     func loadLogs() {
-        loadLogs(at: nil, filters: "ActivityManager&&activityuploadmanager&&308806323998189&&308806323998190".components(separatedBy: "&&"))
+        loadLogs(at: nil, filters: "ActivityManager&&restclient".components(separatedBy: "&&"))
     }
     
     func loadLogs(at url: URL?, filters: [String]) {
@@ -163,5 +163,11 @@ final class LogsStore: ObservableObject {
     
     func isOriginalIndexSelected (_ index: Int) -> Bool {
         return originalLogsSelected.contains(index)
+    }
+}
+
+struct LogStore_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
