@@ -25,7 +25,10 @@ struct ContentView: View {
             Divider()
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
-                    TextField("Enter filter...", text: $query, onEditingChanged: { (changed) in
+                    Text("Filter by multiple words. Use && or || to separate them. Leading and trailing spaces are ignored.")
+                        .font(Font.system(size: 9))
+                        .foregroundColor(Color.secondary)
+                    TextField("Filters separated by &&  or || ...", text: $query, onEditingChanged: { (changed) in
                     }) {
                         self.isAnimating = true
                         self.store.filterLogs(filters: self.query.components(separatedBy: "&&"), keepOnlyMatches: self.keepMatches)
@@ -39,11 +42,13 @@ struct ContentView: View {
                     .disabled(self.query.count == 0)
                 }
                 
-                Toggle(isOn: $keepMatches) {
-                    Text("Keep only matches")
-                }
-                .onTapGesture {
-                    print("Keep matches only")
+                VStack(alignment: .leading) {
+                    Toggle(isOn: $keepMatches) {
+                        Text("Show only matches")
+                    }
+                    .onTapGesture {
+                        print("Keep matches only")
+                    }
                 }
                 
                 // Filters list
@@ -88,6 +93,13 @@ struct ContentView: View {
                                 Text("Copy text")
                             }
                             Button(action: {
+                                let pasteboard = NSPasteboard.general
+                                pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
+                                pasteboard.setString(log.content, forType: .string)
+                            }) {
+                                Text("Copy all selected")
+                            }
+                            Button(action: {
                                 for log in self.items {
                                     if log.isSelected {
                                         self.items[log.index].isSelected.toggle()
@@ -96,7 +108,18 @@ struct ContentView: View {
                                     }
                                 }
                             }) {
-                                Text("Remove all selections")
+                                Text("Clear selections")
+                            }
+                            Button(action: {
+                                for log in self.items {
+                                    if log.isSelected {
+                                        self.items[log.index].isSelected.toggle()
+                                        self.store.selectOriginalIndex(log.originalIndex,
+                                                                       selected: false)
+                                    }
+                                }
+                            }) {
+                                Text("Open selections")
                             }
                         }
                     }
