@@ -16,22 +16,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
-        let logs = LogsStore(url: URL(fileURLWithPath: "/Users/cristi/Downloads/debug.log"))
-        let contentView = ContentView(store: logs)
-
-        // Create the window and set the content view.
-        window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 1000, height: 600),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered,
-            defer: false
-        )
-        window.center()
-        window.setFrameAutosaveName("Logs Ninja")
-        window.contentView = NSHostingView(rootView: contentView)
-        window.makeKeyAndOrderFront(nil)
-        
-        logs.loadLogs()
+//        let logsManager = LogsManager(url: URL(fileURLWithPath: "/Users/cristi/Downloads/iOS-debug.log"))
+//        let store = LogsStore()
+//        let presenter = LogsPresenter(delegate: store, logsManager: logsManager)
+//        let contentView = LogsView(store: store, presenter: presenter)
+//
+//        // Create the window and set the content view.
+//        window = NSWindow(
+//            contentRect: NSRect(x: 0, y: 0, width: 1000, height: 600),
+//            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+//            backing: .buffered,
+//            defer: false
+//        )
+//        window.center()
+//        window.setFrameAutosaveName("Logs Ninja")
+//        window.contentView = NSHostingView(rootView: contentView)
+//        window.makeKeyAndOrderFront(nil)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

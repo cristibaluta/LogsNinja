@@ -7,26 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28378538245C2DA300518678 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28378537245C2DA300518678 /* ActivityIndicator.swift */; };
+		2811FFA22574BC80000BA7D8 /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2811FFA12574BC80000BA7D8 /* CheckboxButton.swift */; };
+		28378538245C2DA300518678 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28378537245C2DA300518678 /* ProgressIndicator.swift */; };
 		2837853C245D713900518678 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2837853B245D713900518678 /* icon.icns */; };
 		2837853E245D7AF400518678 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837853D245D7AF400518678 /* Document.swift */; };
 		283785402463C9C100518678 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837853F2463C9C100518678 /* String+Extension.swift */; };
-		287167D924581A7B0026CB49 /* NSAttributedStringBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 287167D824581A7B0026CB49 /* NSAttributedStringBuilder */; };
 		287167DB24581BBF0026CB49 /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287167DA24581BBF0026CB49 /* AttributedText.swift */; };
-		287167E424581E2E0026CB49 /* AText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287167DE24581E2E0026CB49 /* AText.swift */; };
-		287167E524581E2E0026CB49 /* StaticComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287167DF24581E2E0026CB49 /* StaticComponents.swift */; };
-		287167E624581E2E0026CB49 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287167E024581E2E0026CB49 /* Link.swift */; };
-		287167E724581E2E0026CB49 /* ImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287167E124581E2E0026CB49 /* ImageAttachment.swift */; };
-		287167E824581E2E0026CB49 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287167E224581E2E0026CB49 /* Component.swift */; };
-		287167E924581E2E0026CB49 /* NSAttributedStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287167E324581E2E0026CB49 /* NSAttributedStringBuilder.swift */; };
+		288902962573BA0B004A5FE2 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288902952573BA0B004A5FE2 /* LogCell.swift */; };
+		2889029D2573ED04004A5FE2 /* NSAttributedStringBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 2889029C2573ED04004A5FE2 /* NSAttributedStringBuilder */; };
+		289741582567DA4800D3C136 /* LogsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289741572567DA4800D3C136 /* LogsStore.swift */; };
+		2897415E2567DF1F00D3C136 /* LogsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897415D2567DF1F00D3C136 /* LogsPresenter.swift */; };
 		28ACBD382452E5A0008C9F7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACBD372452E5A0008C9F7E /* AppDelegate.swift */; };
-		28ACBD3A2452E5A0008C9F7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACBD392452E5A0008C9F7E /* ContentView.swift */; };
+		28ACBD3A2452E5A0008C9F7E /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACBD392452E5A0008C9F7E /* LogsView.swift */; };
 		28ACBD3C2452E5A3008C9F7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28ACBD3B2452E5A3008C9F7E /* Assets.xcassets */; };
 		28ACBD3F2452E5A3008C9F7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28ACBD3E2452E5A3008C9F7E /* Preview Assets.xcassets */; };
 		28ACBD422452E5A3008C9F7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28ACBD402452E5A3008C9F7E /* Main.storyboard */; };
 		28ACBD4E2452E5A3008C9F7E /* Logs_NinjaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACBD4D2452E5A3008C9F7E /* Logs_NinjaTests.swift */; };
-		28ACBD572452F293008C9F7E /* LogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACBD562452F293008C9F7E /* LogStore.swift */; };
-		28B4649F244F31E4006D4A28 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4649E244F31E4006D4A28 /* main.swift */; };
+		28ACBD572452F293008C9F7E /* LogsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACBD562452F293008C9F7E /* LogsManager.swift */; };
+		28C61816273B6CBD0044ABBB /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C61815273B6CBD0044ABBB /* Toolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,33 +37,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		28B46499244F31E4006D4A28 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		28378537245C2DA300518678 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		2811FFA12574BC80000BA7D8 /* CheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
+		28378537245C2DA300518678 /* ProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
 		2837853B245D713900518678 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		2837853D245D7AF400518678 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		2837853F2463C9C100518678 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		287167DA24581BBF0026CB49 /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
-		287167DE24581E2E0026CB49 /* AText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AText.swift; sourceTree = "<group>"; };
-		287167DF24581E2E0026CB49 /* StaticComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticComponents.swift; sourceTree = "<group>"; };
-		287167E024581E2E0026CB49 /* Link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
-		287167E124581E2E0026CB49 /* ImageAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAttachment.swift; sourceTree = "<group>"; };
-		287167E224581E2E0026CB49 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
-		287167E324581E2E0026CB49 /* NSAttributedStringBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringBuilder.swift; sourceTree = "<group>"; };
+		288902952573BA0B004A5FE2 /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
+		289741572567DA4800D3C136 /* LogsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsStore.swift; sourceTree = "<group>"; };
+		2897415D2567DF1F00D3C136 /* LogsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsPresenter.swift; sourceTree = "<group>"; };
 		28ACBD352452E5A0008C9F7E /* Logs Ninja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Logs Ninja.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28ACBD372452E5A0008C9F7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		28ACBD392452E5A0008C9F7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		28ACBD392452E5A0008C9F7E /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
 		28ACBD3B2452E5A3008C9F7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28ACBD3E2452E5A3008C9F7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		28ACBD412452E5A3008C9F7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,9 +58,8 @@
 		28ACBD492452E5A3008C9F7E /* Logs NinjaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Logs NinjaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28ACBD4D2452E5A3008C9F7E /* Logs_NinjaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logs_NinjaTests.swift; sourceTree = "<group>"; };
 		28ACBD4F2452E5A3008C9F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28ACBD562452F293008C9F7E /* LogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogStore.swift; sourceTree = "<group>"; };
-		28B4649B244F31E4006D4A28 /* LogsNinja */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LogsNinja; sourceTree = BUILT_PRODUCTS_DIR; };
-		28B4649E244F31E4006D4A28 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		28ACBD562452F293008C9F7E /* LogsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsManager.swift; sourceTree = "<group>"; };
+		28C61815273B6CBD0044ABBB /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2889029D2573ED04004A5FE2 /* NSAttributedStringBuilder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,52 +78,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		28B46498244F31E4006D4A28 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				287167D924581A7B0026CB49 /* NSAttributedStringBuilder in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		287167DC24581E2E0026CB49 /* NSAttributedStringBuilder */ = {
+		2889029025739F87004A5FE2 /* AppKit components */ = {
 			isa = PBXGroup;
 			children = (
-				287167DD24581E2E0026CB49 /* Components */,
-				287167E324581E2E0026CB49 /* NSAttributedStringBuilder.swift */,
+				287167DA24581BBF0026CB49 /* AttributedText.swift */,
+				28378537245C2DA300518678 /* ProgressIndicator.swift */,
+				2811FFA12574BC80000BA7D8 /* CheckboxButton.swift */,
 			);
-			path = NSAttributedStringBuilder;
+			path = "AppKit components";
 			sourceTree = "<group>";
 		};
-		287167DD24581E2E0026CB49 /* Components */ = {
+		2889029B2573ED04004A5FE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				287167DE24581E2E0026CB49 /* AText.swift */,
-				287167DF24581E2E0026CB49 /* StaticComponents.swift */,
-				287167E024581E2E0026CB49 /* Link.swift */,
-				287167E124581E2E0026CB49 /* ImageAttachment.swift */,
-				287167E224581E2E0026CB49 /* Component.swift */,
 			);
-			path = Components;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		289741612567DFBD00D3C136 /* LogsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2837853D245D7AF400518678 /* Document.swift */,
+				28ACBD392452E5A0008C9F7E /* LogsView.swift */,
+				288902952573BA0B004A5FE2 /* LogCell.swift */,
+				289741572567DA4800D3C136 /* LogsStore.swift */,
+				2897415D2567DF1F00D3C136 /* LogsPresenter.swift */,
+				28ACBD562452F293008C9F7E /* LogsManager.swift */,
+				28C61815273B6CBD0044ABBB /* Toolbar.swift */,
+			);
+			path = LogsScreen;
 			sourceTree = "<group>";
 		};
 		28ACBD362452E5A0008C9F7E /* Logs Ninja */ = {
 			isa = PBXGroup;
 			children = (
 				28ACBD372452E5A0008C9F7E /* AppDelegate.swift */,
-				2837853D245D7AF400518678 /* Document.swift */,
-				28ACBD562452F293008C9F7E /* LogStore.swift */,
-				28ACBD392452E5A0008C9F7E /* ContentView.swift */,
-				287167DA24581BBF0026CB49 /* AttributedText.swift */,
-				28378537245C2DA300518678 /* ActivityIndicator.swift */,
+				289741612567DFBD00D3C136 /* LogsScreen */,
+				2889029025739F87004A5FE2 /* AppKit components */,
 				2837853F2463C9C100518678 /* String+Extension.swift */,
 				28ACBD3B2452E5A3008C9F7E /* Assets.xcassets */,
 				2837853B245D713900518678 /* icon.icns */,
 				28ACBD402452E5A3008C9F7E /* Main.storyboard */,
-				287167DC24581E2E0026CB49 /* NSAttributedStringBuilder */,
 				28ACBD432452E5A3008C9F7E /* Info.plist */,
 				28ACBD442452E5A3008C9F7E /* Logs_Ninja.entitlements */,
 				28ACBD3D2452E5A3008C9F7E /* Preview Content */,
@@ -167,29 +149,20 @@
 		28B46492244F31E4006D4A28 = {
 			isa = PBXGroup;
 			children = (
-				28B4649D244F31E4006D4A28 /* logfilter */,
 				28ACBD362452E5A0008C9F7E /* Logs Ninja */,
 				28ACBD4C2452E5A3008C9F7E /* Logs NinjaTests */,
 				28B4649C244F31E4006D4A28 /* Products */,
+				2889029B2573ED04004A5FE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		28B4649C244F31E4006D4A28 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				28B4649B244F31E4006D4A28 /* LogsNinja */,
 				28ACBD352452E5A0008C9F7E /* Logs Ninja.app */,
 				28ACBD492452E5A3008C9F7E /* Logs NinjaTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		28B4649D244F31E4006D4A28 /* logfilter */ = {
-			isa = PBXGroup;
-			children = (
-				28B4649E244F31E4006D4A28 /* main.swift */,
-			);
-			path = logfilter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +181,9 @@
 			dependencies = (
 			);
 			name = "Logs Ninja";
+			packageProductDependencies = (
+				2889029C2573ED04004A5FE2 /* NSAttributedStringBuilder */,
+			);
 			productName = "Logs Ninja";
 			productReference = 28ACBD352452E5A0008C9F7E /* Logs Ninja.app */;
 			productType = "com.apple.product-type.application";
@@ -230,26 +206,6 @@
 			productReference = 28ACBD492452E5A3008C9F7E /* Logs NinjaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		28B4649A244F31E4006D4A28 /* LogsNinja */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 28B464A2244F31E4006D4A28 /* Build configuration list for PBXNativeTarget "LogsNinja" */;
-			buildPhases = (
-				28B46497244F31E4006D4A28 /* Sources */,
-				28B46498244F31E4006D4A28 /* Frameworks */,
-				28B46499244F31E4006D4A28 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LogsNinja;
-			packageProductDependencies = (
-				287167D824581A7B0026CB49 /* NSAttributedStringBuilder */,
-			);
-			productName = logfilter;
-			productReference = 28B4649B244F31E4006D4A28 /* LogsNinja */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -266,9 +222,6 @@
 					28ACBD482452E5A3008C9F7E = {
 						CreatedOnToolsVersion = 11.4;
 						TestTargetID = 28ACBD342452E5A0008C9F7E;
-					};
-					28B4649A244F31E4006D4A28 = {
-						CreatedOnToolsVersion = 11.4;
 					};
 				};
 			};
@@ -288,7 +241,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				28B4649A244F31E4006D4A28 /* LogsNinja */,
 				28ACBD342452E5A0008C9F7E /* Logs Ninja */,
 				28ACBD482452E5A3008C9F7E /* Logs NinjaTests */,
 			);
@@ -322,18 +274,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				287167DB24581BBF0026CB49 /* AttributedText.swift in Sources */,
-				287167E824581E2E0026CB49 /* Component.swift in Sources */,
-				287167E624581E2E0026CB49 /* Link.swift in Sources */,
-				287167E924581E2E0026CB49 /* NSAttributedStringBuilder.swift in Sources */,
-				28ACBD3A2452E5A0008C9F7E /* ContentView.swift in Sources */,
-				28378538245C2DA300518678 /* ActivityIndicator.swift in Sources */,
+				28ACBD3A2452E5A0008C9F7E /* LogsView.swift in Sources */,
+				28378538245C2DA300518678 /* ProgressIndicator.swift in Sources */,
+				28C61816273B6CBD0044ABBB /* Toolbar.swift in Sources */,
 				283785402463C9C100518678 /* String+Extension.swift in Sources */,
-				287167E424581E2E0026CB49 /* AText.swift in Sources */,
-				287167E724581E2E0026CB49 /* ImageAttachment.swift in Sources */,
+				289741582567DA4800D3C136 /* LogsStore.swift in Sources */,
+				288902962573BA0B004A5FE2 /* LogCell.swift in Sources */,
 				2837853E245D7AF400518678 /* Document.swift in Sources */,
+				2811FFA22574BC80000BA7D8 /* CheckboxButton.swift in Sources */,
 				28ACBD382452E5A0008C9F7E /* AppDelegate.swift in Sources */,
-				28ACBD572452F293008C9F7E /* LogStore.swift in Sources */,
-				287167E524581E2E0026CB49 /* StaticComponents.swift in Sources */,
+				28ACBD572452F293008C9F7E /* LogsManager.swift in Sources */,
+				2897415E2567DF1F00D3C136 /* LogsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,14 +293,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				28ACBD4E2452E5A3008C9F7E /* Logs_NinjaTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28B46497244F31E4006D4A28 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				28B4649F244F31E4006D4A28 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +334,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-Bundle-ID-ro.imagin.logsninja";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -414,7 +357,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-Bundle-ID-ro.imagin.logsninja";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -578,28 +521,6 @@
 			};
 			name = Release;
 		};
-		28B464A3244F31E4006D4A28 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5NHDC5EV44;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		28B464A4244F31E4006D4A28 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5NHDC5EV44;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -630,15 +551,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		28B464A2244F31E4006D4A28 /* Build configuration list for PBXNativeTarget "LogsNinja" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				28B464A3244F31E4006D4A28 /* Debug */,
-				28B464A4244F31E4006D4A28 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -653,7 +565,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		287167D824581A7B0026CB49 /* NSAttributedStringBuilder */ = {
+		2889029C2573ED04004A5FE2 /* NSAttributedStringBuilder */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 287167D724581A7B0026CB49 /* XCRemoteSwiftPackageReference "NSAttributedStringBuilder" */;
 			productName = NSAttributedStringBuilder;
